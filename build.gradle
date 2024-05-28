@@ -27,14 +27,12 @@ kotlin {
     jvmToolchain(17)
 }
 
-def vram = "4000M"
-
 dependencies {
     implementation "org.samaelheaven:zenith:1.0-SNAPSHOT"
 }
 
 run {
-    args = ["-Dprism.maxvram=$vram"]
+    args = ["-Dprism.maxvram=4000M"]
 }
 
 jar {
