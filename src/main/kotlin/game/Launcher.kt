@@ -8,8 +8,7 @@ class Launcher {
     companion object {
         @JvmStatic fun main(args : Array<String>) {
             val config = GameConfig(
-                icon = url("icon.png"),
-                decorated = false
+                icon = url("icon.png")
             )
             Game.launch(MainScene(), config)
         }
