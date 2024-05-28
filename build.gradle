@@ -1,0 +1,50 @@
+plugins {
+    id "application"
+    id "org.jetbrains.kotlin.jvm" version "1.9.22"
+    id "org.openjfx.javafxplugin" version "0.0.10"
+}
+
+application.getMainClass().set("game.Launcher")
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/samaelheaven/zenith")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
+            password = project.findProperty("gpr.token") ?: System.getenv("TOKEN_GITHUB")
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
+def javafxVersion = "17.0.1"
+
+javafx {
+    version = javafxVersion
+    modules = ["javafx.controls", "javafx.fxml"]
+}
+
+dependencies {
+    implementation "org.samaelheaven:zenith:1.0-SNAPSHOT"
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes "Main-Class": application.getMainClass()
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
