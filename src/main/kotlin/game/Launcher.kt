@@ -6,7 +6,8 @@ import org.samaelheaven.zenith.utils.url
 
 class Launcher {
     companion object {
-        @JvmStatic fun main(args : Array<String>) {
+        @JvmStatic
+        fun main(args: Array<String>) {
             val config = GameConfig(
                 icon = url("icon.png")
             )
