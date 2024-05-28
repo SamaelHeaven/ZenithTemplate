@@ -1,7 +1,7 @@
 plugins {
     id "application"
     id "org.jetbrains.kotlin.jvm" version "1.9.22"
-    id "org.openjfx.javafxplugin" version "0.0.10"
+    id "org.openjfx.javafxplugin" version "0.1.0"
 }
 
 application.getMainClass().set("game.Launcher")
