@@ -1,11 +1,17 @@
 package game
 
-import org.samaelheaven.zenith.core.App
+import org.samaelheaven.zenith.core.Game
+import org.samaelheaven.zenith.core.GameConfig
+import org.samaelheaven.zenith.utils.url
 
 class Launcher {
     companion object {
         @JvmStatic fun main(args : Array<String>) {
-            App.launch()
+            val config = GameConfig(
+                icon = url("icon.png"),
+                decorated = false
+            )
+            Game.launch(MainScene(), config)
         }
     }
 }

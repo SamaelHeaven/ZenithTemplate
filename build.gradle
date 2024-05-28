@@ -29,6 +29,7 @@ kotlin {
 }
 
 def javafxVersion = "17.0.1"
+def vram = "4000M"
 
 javafx {
     version = javafxVersion
@@ -37,6 +38,10 @@ javafx {
 
 dependencies {
     implementation "org.samaelheaven:zenith:1.0-SNAPSHOT"
+}
+
+run {
+    args = ["-Dprism.maxvram=$vram"]
 }
 
 jar {
