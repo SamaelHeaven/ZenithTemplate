@@ -1,6 +1,7 @@
 plugins {
     id "application"
     id "org.jetbrains.kotlin.jvm" version "1.9.22"
+    id "org.openjfx.javafxplugin" version "0.1.0"
 }
 
 application.getMainClass().set("game.Launcher")
@@ -19,12 +20,19 @@ repositories {
     }
 }
 
+def javafxVersion = "17.0.11"
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
 }
 
 kotlin {
     jvmToolchain(17)
+}
+
+javafx {
+    version = javafxVersion
+    modules = ["javafx.controls", "javafx.fxml"]
 }
 
 dependencies {
