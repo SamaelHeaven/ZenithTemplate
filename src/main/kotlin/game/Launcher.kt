@@ -1,8 +1,8 @@
 package game
 
-import org.samaelheaven.zenith.core.Game
-import org.samaelheaven.zenith.core.GameConfig
-import org.samaelheaven.zenith.utils.Resource
+import zenith.core.Game
+import zenith.core.GameConfig
+import zenith.utils.Resource
 
 object Launcher {
     @JvmStatic

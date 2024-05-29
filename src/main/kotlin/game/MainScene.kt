@@ -1,6 +1,6 @@
 package game
 
-import org.samaelheaven.zenith.core.Scene
+import zenith.core.Scene
 
 class MainScene : Scene() {
     override fun initialize() {
