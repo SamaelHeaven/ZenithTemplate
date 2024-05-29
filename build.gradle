@@ -14,9 +14,13 @@ repositories {
     maven {
         name = "GitHubPackages"
         url = uri("https://maven.pkg.github.com/samaelheaven/zenith")
-        credentials {
-            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
-            password = project.findProperty("gpr.token") ?: System.getenv("TOKEN_GITHUB")
+        def user = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
+        def token = project.findProperty("gpr.token") ?: System.getenv("TOKEN_GITHUB")
+        if (user != null && token != null) {
+            credentials {
+                username = user
+                password = token
+            }
         }
     }
 }
