@@ -4,8 +4,9 @@ plugins {
     id "org.openjfx.javafxplugin" version "0.1.0"
 }
 
-application.getMainClass().set("game.Launcher")
 version = "1.0-SNAPSHOT"
+application.getMainClass().set("game.Launcher")
+application.applicationDefaultJvmArgs = ["-Dprism.maxvram=4000M"]
 
 repositories {
     mavenCentral()
@@ -33,10 +34,6 @@ javafx {
 
 dependencies {
     implementation "org.samaelheaven:zenith:1.0-SNAPSHOT"
-}
-
-run {
-    args = ["-Dprism.maxvram=4000M"]
 }
 
 jar {
