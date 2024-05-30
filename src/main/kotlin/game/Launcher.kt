@@ -2,7 +2,7 @@ package game
 
 import zenith.core.Game
 import zenith.core.GameConfig
-import zenith.utils.Resource
+import zenith.io.Resource
 
 object Launcher {
     @JvmStatic
