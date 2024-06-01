@@ -18,5 +18,8 @@ class MainScene : Scene() {
         if (Keyboard.isKeyPressed(Key.TAB)) {
             Game.fullscreen = !Game.fullscreen
         }
+        if (Keyboard.isKeyPressed(Key.ESCAPE)) {
+            Game.exit()
+        }
     }
 }
