@@ -10,6 +10,6 @@ object Launcher {
         val config = GameConfig(
             icon = Resource.url("icon.png")
         )
-        Game.launch(MainScene(), config)
+        Game.launch(MyScene(), config)
     }
 }

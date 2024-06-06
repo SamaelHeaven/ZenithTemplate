@@ -10,7 +10,7 @@ import zenith.input.Key
 import zenith.input.Keyboard
 import zenith.paint.Color
 
-class MainScene : Scene() {
+class MyScene : Scene() {
     override fun initialize() {
         val entities = FXML.load<SceneNode>("scene.fxml").loadEntities()
         addEntities(entities)
