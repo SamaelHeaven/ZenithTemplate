@@ -1,7 +1,7 @@
 package game
 
 import zenith.core.Entity
-import zenith.core.Prefab
+import zenith.prefab.Prefab
 
 class MyPrefab : Prefab() {
     override var name: String
