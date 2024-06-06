@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import game.MyComponent?>
 <?import game.MyPrefab?>
-<?import zenith.fxml.EntityNode?>
 <?import zenith.fxml.SceneNode?>
 <SceneNode xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-    <EntityNode>
-        <MyComponent/>
-    </EntityNode>
     <MyPrefab/>
 </SceneNode>
