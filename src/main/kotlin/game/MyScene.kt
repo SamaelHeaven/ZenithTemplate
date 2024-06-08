@@ -1,31 +1,44 @@
 package game
 
 import zenith.core.Entity
-import zenith.core.Game
 import zenith.core.Renderer
 import zenith.core.Scene
-import zenith.fxml.FXML
-import zenith.fxml.SceneNode
+import zenith.core.Time
+import zenith.drawable.Rectangle
+import zenith.input.InputAxis
 import zenith.input.Key
 import zenith.input.Keyboard
+import zenith.input.Mouse
+import zenith.math.Vector2
 import zenith.paint.Color
+import java.util.*
 
 class MyScene : Scene() {
     override fun initialize() {
-        val entities = FXML.load<SceneNode>("scene.fxml").loadEntities()
-        addEntities(entities)
+        for (i in 0 until 50000) {
+            val random = Random()
+            val entity = Entity(
+                position = Vector2(random.nextInt(1000), random.nextInt(1000)),
+                scale = Vector2(100),
+            )
+            entity.addComponent(
+                Rectangle(
+                    entity = entity, fill = Color.RED, stroke = Color.BLACK, strokeWidth = 2f
+                )
+            )
+            addEntity(entity)
+        }
     }
 
     override fun update() {
         Renderer.clearBackground(Color.BLUE)
-        if (Keyboard.isKeyPressed(Key.TAB)) {
-            Game.fullscreen = !Game.fullscreen
+        camera.offset -= InputAxis.both.normalize() * 200 * Time.delta
+        if (Keyboard.isKeyDown(Key.R)) {
+            for (entity in this) {
+                entity.rotation += 60 * Time.delta
+            }
         }
-        if (Keyboard.isKeyPressed(Key.ESCAPE)) {
-            Game.exit()
-        }
-        if (Keyboard.isKeyPressed(Key.BACK_SPACE)) {
-            removeEntities<Entity>()
-        }
+        camera.zoom += Mouse.scroll.y * 10 * Time.delta
+        println(Time.currentFPS)
     }
 }
