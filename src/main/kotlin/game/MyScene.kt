@@ -38,7 +38,8 @@ class MyScene : Scene() {
                 entity.rotation += 60 * Time.delta
             }
         }
-        camera.zoom += Mouse.scroll.y * 10 * Time.delta
+        camera.zoom += Mouse.scroll.y * 0.001f
+        camera.zoom = 0.01f.coerceAtLeast(camera.zoom)
         println(Time.currentFPS)
     }
 }
