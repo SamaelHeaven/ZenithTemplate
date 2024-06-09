@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import game.MyPrefab?>
 <?import zenith.fxml.SceneNode?>
-<SceneNode xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-    <MyPrefab/>
+<?import zenith.prefab.RectanglePrefab?>
+<SceneNode xmlns="http://javafx.com/javafx">
+    <RectanglePrefab position="400 300"
+                     scale="100"
+                     fill="red"
+                     stroke="black"
+                     strokeWidth="2"/>
 </SceneNode>
