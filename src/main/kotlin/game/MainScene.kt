@@ -21,7 +21,7 @@ class MainScene : Scene() {
         if (Keyboard.isKeyDown(Key.R)) {
             forEach { it.rotation += 60 * Time.delta }
         }
-        camera.zoom += Mouse.scroll.y * 0.001f
+        camera.zoom += Mouse.scroll.y * 0.005f
         camera.zoom -= round(Gamepad[0].getAxis(GamepadAxis.RIGHT_Y)) * 2 * Time.delta
         camera.zoom = 0.01f.coerceAtLeast(camera.zoom)
     }
