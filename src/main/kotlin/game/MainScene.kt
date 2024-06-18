@@ -1,5 +1,6 @@
 package game
 
+import zenith.core.Game
 import zenith.core.Renderer
 import zenith.core.Scene
 import zenith.core.Time
@@ -19,7 +20,10 @@ class MainScene : Scene() {
         Renderer.clearBackground(Color.BLUE)
         camera.offset -= InputAxis.both.normalize() * 200 * Time.delta
         if (Keyboard.isKeyDown(Key.R)) {
-            forEach { it.rotation += 60 * Time.delta }
+            camera.rotation += 60 * Time.delta
+        }
+        if (Keyboard.isKeyPressed(Key.TAB)) {
+            Game.fullscreen = !Game.fullscreen
         }
         camera.zoom += Mouse.scroll.y * 0.005f
         camera.zoom -= round(Gamepad[0].getAxis(GamepadAxis.RIGHT_Y)) * 2 * Time.delta
