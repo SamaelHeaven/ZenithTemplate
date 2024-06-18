@@ -4,14 +4,12 @@
 <?import zenith.prefab.RectanglePrefab?>
 <?import zenith.prefab.SpritePrefab?>
 <SceneNode xmlns="http://javafx.com/javafx">
-    <RectanglePrefab position="400 300"
-                     scale="100"
-                     fill="#ff0000"
-                     stroke="#000"
-                     strokeWidth="2"
-                     radius="20"/>
+    <RectanglePrefab origin="-1"
+                     scale="800 600"
+                     drawMode="SCREEN"
+                     fill="#87ceeb"/>
 
     <SpritePrefab origin="-1"
-                  scale="100"
-                  texture="icon.png"/>
+                  smooth="false"
+                  texture="img.png"/>
 </SceneNode>
